@@ -1,0 +1,146 @@
+-- Esta línea de código SQL crea una tabla llamada Departamento.
+CREATE TABLE Departamento (
+    -- Esta línea define una columna llamada PK_ID_Departamento que es de tipo INT y se establece como clave primaria.
+    PK_ID_Departamento INT PRIMARY KEY,
+    -- Esta línea define una columna llamada Nombre que es de tipo VARCHAR(50) y no puede ser nula.
+    Nombre VARCHAR(50) NOT NULL,
+    -- Esta línea define una columna llamada Ubicacion que es de tipo VARCHAR(50) y no puede ser nula.
+    Ubicacion VARCHAR(50) NOT NULL
+);
+
+-- Esta línea de código SQL crea una tabla llamada Profesor.
+CREATE TABLE Profesor (
+    -- Esta línea define una columna llamada PK_ID_Profesor que es de tipo INT y se establece como clave primaria.
+    PK_ID_Profesor INT PRIMARY KEY,
+    -- Esta línea define una columna llamada Nombre que es de tipo VARCHAR(50) y no puede ser nula.
+    Nombre VARCHAR(50) NOT NULL,
+    -- Esta línea define una columna llamada Apellido que es de tipo VARCHAR(50) y no puede ser nula.
+    Apellido VARCHAR(50) NOT NULL,
+    -- Esta línea define una columna llamada Fecha_Nacimiento que es de tipo DATE y no puede ser nula.
+    Fecha_Nacimiento DATE NOT NULL,
+    -- Esta línea define una columna llamada Direccion que es de tipo VARCHAR(100) y no puede ser nula.
+    Direccion VARCHAR(100) NOT NULL,
+    -- Esta línea define una columna llamada Correo_Electronico que es de tipo VARCHAR(50) y no puede ser nula.
+    Correo_Electronico VARCHAR(50) NOT NULL,
+    -- Esta línea define una columna llamada PK_ID_Departamento que es de tipo INT y se utilizará como clave externa para referenciar la tabla Departamento.
+    PK_ID_Departamento INT,
+    -- Esta línea establece una restricción FOREIGN KEY en la columna PK_ID_Departamento que referencia la columna PK_ID_Departamento en la tabla Departamento.
+    FOREIGN KEY (PK_ID_Departamento) REFERENCES Departamento(PK_ID_Departamento)
+);
+
+-- Esta línea de código SQL crea una tabla llamada Curso.
+CREATE TABLE Curso (
+    -- Esta línea define una columna llamada PK_ID_Curso que es de tipo INT y se establece como clave primaria.
+    PK_ID_Curso INT PRIMARY KEY,
+    -- Esta línea define una columna llamada Nombre que es de tipo VARCHAR(50) y no puede ser nula.
+    Nombre VARCHAR(50) NOT NULL,
+    -- Esta línea define una columna llamada Descripcion que es de tipo TEXT y no puede ser nula.
+    Descripcion TEXT NOT NULL,
+    -- Esta línea define una columna llamada Creditos que es de tipo INT y no puede ser nula.
+    Creditos INT NOT NULL,
+    -- Esta línea define una columna llamada PK_ID_Profesor que es de tipo INT y se utilizará como clave externa para referenciar la tabla Profesor.
+    PK_ID_Profesor INT,
+    -- Esta línea establece una restricción FOREIGN KEY en la columna PK_ID_Profesor que referencia la columna PK_ID_Profesor en la tabla Profesor.
+    FOREIGN KEY (PK_ID_Profesor) REFERENCES Profesor(PK_ID_Profesor)
+);
+
+-- Esta línea de código SQL crea una tabla llamada Estudiante.
+CREATE TABLE Estudiante (
+    -- Esta línea define una columna llamada PK_ID_Estudiante que es de tipo INT y se establece como clave primaria.
+    PK_ID_Estudiante INT PRIMARY KEY,
+    -- Esta línea define una columna llamada Nombre que es de tipo VARCHAR(50) y no puede ser nula.
+    Nombre VARCHAR(50) NOT NULL,
+    -- Esta línea define una columna llamada Apellido que es de tipo VARCHAR(50) y no puede ser nula.
+    Apellido VARCHAR(50) NOT NULL,
+    -- Esta línea define una columna llamada Fecha_Nacimiento que es de tipo DATE y no puede ser nula.
+    Fecha_Nacimiento DATE NOT NULL,
+    -- Esta línea define una columna llamada Direccion que es de tipo VARCHAR(100) y no puede ser nula.
+    Direccion VARCHAR(100) NOT NULL,
+    -- Esta línea define una columna llamada Correo_Electronico que es de tipo VARCHAR(50) y no puede ser nula.
+    Correo_Electronico VARCHAR(50) NOT NULL,
+    -- Esta línea establece una restricción UNIQUE en la columna Correo_Electronico para garantizar que cada dirección de correo electrónico sea única en la tabla.
+    UNIQUE (Correo_Electronico)
+);
+
+-- Esta línea de código SQL crea una tabla llamada Matricula.
+CREATE TABLE Matricula (
+    -- Esta línea define una columna llamada PK_ID_Matricula que es de tipo INT y se establece como clave primaria.
+    PK_ID_Matricula INT PRIMARY KEY,
+    -- Esta línea define una columna llamada PK_ID_Estudiante que es de tipo INT y se utilizará como clave externa para referenciar la tabla Estudiante.
+    PK_ID_Estudiante INT,
+    -- Esta línea define una columna llamada PK_ID_Curso que es de tipo INT y se utilizará como clave externa para referenciar la tabla Curso.
+    PK_ID_Curso INT,
+    -- Esta línea define una columna llamada Anio_Academico que es de tipo YEAR y no puede ser nula.
+    Anio_Academico YEAR NOT NULL,
+    -- Esta línea define una columna llamada Calificacion que es de tipo DECIMAL(3,2) y puede ser nula.
+    Calificacion DECIMAL(3,2),
+    -- Esta línea establece una restricción FOREIGN KEY en la columna PK_ID_Estudiante que referencia la columna PK_ID_Estudiante en la tabla Estudiante.
+    FOREIGN KEY (PK_ID_Estudiante) REFERENCES Estudiante(PK_ID_Estudiante),
+    -- Esta línea establece una restricción FOREIGN KEY en la columna PK_ID_Curso que referencia la columna PK_ID_Curso en la tabla Curso.
+    FOREIGN KEY (PK_ID_Curso) REFERENCES Curso(PK_ID_Curso)
+);
+
+
+-- Seleccionar todos los departamentos:
+
+SELECT * FROM Departamento;
+
+
+-- Seleccionar todos los profesores:
+SELECT * FROM Profesor;
+
+-- Seleccionar todos los cursos con su respectivo profesor:
+SELECT Curso.*, Profesor.Nombre AS Profesor_Nombre, Profesor.Apellido AS Profesor_Apellido
+FROM Curso
+INNER JOIN Profesor ON Curso.PK_ID_Profesor = Profesor.PK_ID_Profesor;
+
+-- Insertar un nuevo departamento:
+INSERT INTO Departamento (PK_ID_Departamento, Nombre, Ubicacion) VALUES (1, 'Departamento de Matemáticas', 'Edificio A');
+
+
+-- Insertar un nuevo profesor:
+INSERT INTO Profesor (PK_ID_Profesor, Nombre, Apellido, Fecha_Nacimiento, Direccion, Correo_Electronico, PK_ID_Departamento) 
+VALUES (1, 'Juan', 'Pérez', '1980-05-15', 'Calle Principal 123', 'juan.perez@example.com', 1);
+
+
+-- Insertar un nuevo curso:
+INSERT INTO Curso (PK_ID_Curso, Nombre, Descripcion, Creditos, PK_ID_Profesor) 
+VALUES (1, 'Álgebra Lineal', 'Curso introductorio de álgebra lineal', 3, 1);
+
+
+-- Insertar un nuevo estudiante:
+INSERT INTO Estudiante (PK_ID_Estudiante, Nombre, Apellido, Fecha_Nacimiento, Direccion, Correo_Electronico) 
+VALUES (1, 'María', 'Gómez', '2000-08-20', 'Avenida Central 456', 'maria.gomez@example.com');
+
+
+-- Insertar una nueva matrícula:
+INSERT INTO Matricula (PK_ID_Matricula, PK_ID_Estudiante, PK_ID_Curso, Anio_Academico, Calificacion) 
+VALUES (1, 1, 1, 2024, NULL);
+
+
+-- Actualizar el nombre de un departamento:
+UPDATE Departamento SET Nombre = 'Departamento de Física' WHERE PK_ID_Departamento = 1;
+
+-- Actualizar la dirección de un estudiante:
+UPDATE Estudiante SET Direccion = 'Calle Nueva 789' WHERE PK_ID_Estudiante = 1;
+
+
+-- Actualizar la dirección de un estudiante:
+UPDATE Estudiante SET Direccion = 'Calle Nueva 789' WHERE PK_ID_Estudiante = 1;
+
+
+-- Actualizar la calificación de una matrícula:
+UPDATE Matricula SET Calificacion = 4.5 WHERE PK_ID_Matricula = 1;
+
+
+-- Eliminar un departamento y sus profesores relacionados:
+DELETE FROM Departamento WHERE PK_ID_Departamento = 1;
+
+
+-- Eliminar un estudiante y todas sus matrículas relacionadas:
+DELETE FROM Estudiante WHERE PK_ID_Estudiante = 1;
+
+
+
+
+

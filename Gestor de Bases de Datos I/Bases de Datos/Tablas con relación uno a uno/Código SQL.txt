@@ -1,0 +1,10 @@
+CREATE TABLE Usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50)
+);
+
+CREATE TABLE Perfiles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id)
+);

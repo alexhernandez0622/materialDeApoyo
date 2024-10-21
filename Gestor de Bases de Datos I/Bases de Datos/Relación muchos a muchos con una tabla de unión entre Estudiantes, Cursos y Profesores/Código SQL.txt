@@ -1,0 +1,26 @@
+Supongamos que deseas gestionar la relación entre estudiantes, cursos y profesores en una escuela. Un estudiante puede inscribirse en varios cursos, y un curso puede tener varios estudiantes y varios profesores. La tabla de unión se usa para relacionar estudiantes con cursos y profesores:
+
+CREATE TABLE Estudiantes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50)
+);
+
+CREATE TABLE Profesores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50)
+);
+
+CREATE TABLE Cursos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_curso VARCHAR(100)
+);
+
+CREATE TABLE Inscripciones (
+    estudiante_id INT,
+    curso_id INT,
+    profesor_id INT,
+    PRIMARY KEY (estudiante_id, curso_id),
+    FOREIGN KEY (estudiante_id) REFERENCES Estudiantes(id),
+    FOREIGN KEY (curso_id) REFERENCES Cursos(id),
+    FOREIGN KEY (profesor_id) REFERENCES Profesores(id)
+);

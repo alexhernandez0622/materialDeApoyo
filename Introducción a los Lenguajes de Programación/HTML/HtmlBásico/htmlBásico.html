@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a HTML</title>
+</head>
+<body>
+    <!-- Encabezado principal del documento -->
+    <header>
+        <h1>Introducción a HTML</h1>
+    </header>
+
+    <!-- Sección principal del contenido -->
+    <main>
+        <section>
+            <h2>Estructura básica de un documento HTML</h2>
+            <p>Un documento HTML comienza con la declaración <code>&lt;!DOCTYPE html&gt;</code> que indica al navegador el tipo de documento. Luego, el contenido está estructurado con etiquetas <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> y <code>&lt;body&gt;</code>.</p>
+        </section>
+
+        <section>
+            <h2>Etiquetas esenciales</h2>
+            <ul>
+                <li><strong>&lt;html&gt;:</strong> La etiqueta raíz del documento que contiene todo el contenido.</li>
+                <li><strong>&lt;head&gt;:</strong> Contiene metadatos, como el título del documento y enlaces a recursos externos.</li>
+                <li><strong>&lt;body&gt;:</strong> Contiene el contenido visible del documento, como texto, imágenes y enlaces.</li>
+                <li><strong>&lt;h1&gt; a &lt;h6&gt;:</strong> Encabezados de diferentes niveles para organizar el contenido.</li>
+                <li><strong>&lt;p&gt;:</strong> Etiqueta de párrafo para bloques de texto.</li>
+                <li><strong>&lt;a&gt;:</strong> Etiqueta de ancla para enlaces.</li>
+                <li><strong>&lt;img&gt;:</strong> Etiqueta para insertar imágenes.</li>
+                <li><strong>&lt;ul&gt; y &lt;ol&gt;:</strong> Etiquetas para listas desordenadas y ordenadas, respectivamente.</li>
+                <li><strong>&lt;li&gt;:</strong> Etiqueta para elementos de lista.</li>
+                <li><strong>&lt;table&gt;:</strong> Etiqueta para tablas.</li>
+                <li><strong>&lt;tr&gt;, &lt;th&gt;, &lt;td&gt;:</strong> Etiquetas para filas, encabezados de columna y celdas de tabla.</li>
+            </ul>
+        </section>
+
+        <!-- Ejemplo de una imagen -->
+        <section>
+            <h2>Imágenes en HTML</h2>
+            <p>Para insertar imágenes, se utiliza la etiqueta <code>&lt;img&gt;</code> con atributos como <strong>src</strong> (fuente) y <strong>alt</strong> (texto alternativo).</p>
+            <img src="https://via.placeholder.com/150" alt="Imagen de ejemplo">
+        </section>
+
+        <!-- Ejemplo de hipervínculo -->
+        <section>
+            <h2>Hipervínculos en HTML</h2>
+            <p>Para crear enlaces a otras páginas o sitios, se utiliza la etiqueta <code>&lt;a&gt;</code> con el atributo <strong>href</strong>:</p>
+            <a href="https://www.example.com" target="_blank">Visita nuestro sitio web</a>
+        </section>
+
+        <!-- Ejemplo de lista -->
+        <section>
+            <h2>Listas en HTML</h2>
+            <h3>Lista Desordenada</h3>
+            <ul>
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+            </ul>
+
+            <h3>Lista Ordenada</h3>
+            <ol>
+                <li>Paso 1</li>
+                <li>Paso 2</li>
+                <li>Paso 3</li>
+            </ol>
+        </section>
+
+        <!-- Ejemplo de tabla -->
+        <section>
+            <h2>Tablas en HTML</h2>
+            <p>Las tablas se crean con la etiqueta <code>&lt;table&gt;</code> y se organizan en filas (<code>&lt;tr&gt;</code>), encabezados de columna (<code>&lt;th&gt;</code>), y celdas de datos (<code>&lt;td&gt;</code>).</p>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Ciudad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juan</td>
+                        <td>25</td>
+                        <td>Madrid</td>
+                    </tr>
+                    <tr>
+                        <td>María</td>
+                        <td>30</td>
+                        <td>Barcelona</td>
+                    </tr>
+                    <tr>
+                        <td>Pedro</td>
+                        <td>28</td>
+                        <td>Valencia</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Pie de página del documento -->
+    <footer>
+        <p>&copy; 2024 Curso de HTML Básico</p>
+    </footer>
+</body>
+</html>

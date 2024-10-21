@@ -1,0 +1,35 @@
+Para ilustrar la aplicación de la segunda forma normal (2FN), podríamos ampliar nuestro ejemplo de la base de datos de libros y autores. Supongamos que además de almacenar información sobre los libros y sus autores, queremos rastrear las diferentes ediciones de cada libro, incluyendo el año de publicación y el editor de cada edición.
+
+Aquí hay una estructura de base de datos que cumple con la 2FN:
+
+-- Tabla para autores
+CREATE TABLE Autor (
+    autor_id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100),
+    apellido VARCHAR(100)
+);
+
+-- Tabla para libros
+CREATE TABLE Libro (
+    libro_id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(100),
+    autor_id INT,
+    FOREIGN KEY (autor_id) REFERENCES Autor(autor_id)
+);
+
+-- Tabla para ediciones de libros
+CREATE TABLE Edicion (
+    edicion_id INT AUTO_INCREMENT PRIMARY KEY,
+    libro_id INT,
+    año_publicacion INT,
+    editor VARCHAR(100),
+    FOREIGN KEY (libro_id) REFERENCES Libro(libro_id)
+);
+
+
+En este diseño, hemos creado una nueva tabla llamada "Edicion" para almacenar información sobre las diferentes ediciones de cada libro. Esta tabla tiene una clave primaria (edicion_id) que identifica de manera única cada edición. Además, tiene un campo libro_id que actúa como clave foránea que referencia la tabla Libro, estableciendo así la relación entre las ediciones y los libros. Los atributos año_publicacion y editor están completamente determinados por la clave primaria edicion_id, cumpliendo con la segunda forma normal (2FN).
+
+
+
+
+

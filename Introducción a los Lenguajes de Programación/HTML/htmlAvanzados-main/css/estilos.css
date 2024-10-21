@@ -1,0 +1,80 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container-form {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    display: grid; /*Nos ayuda a organizar los elementos en forma de columnas*/
+    grid-template-columns: repeat(2, 1fr); /*Hace dos columnas de igual de ancho*/
+    grid-gap: 50px; /*Nos da el espacio entre las columnas*/
+    margin-top: 90px; /*Margen superior, para separarlo del borde de arriba*/
+}
+
+.container-form h2 {
+    margin-bottom: 15px; /*Nos ayuda a dar espacio del subtitulo con los parrafo en la parte inferior*/
+    font-size: 35px; /*Nos ayuda a establecer el tamaño del texto*/
+}
+
+.container-form p {
+    font-size: 17px;
+    line-height: 1.6; /*Nos ayuda a darle interlineado al parrafo*/
+    margin-bottom: 30px; /*Margen inferior para separar los elementos*/
+}
+
+.container-form a {
+    font-size: 17px;
+    display: inline-block; /*Hace que los enlaces estén uno por debajo de la otra*/
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 15px;
+    color: black;
+    font-weight: 700;
+}
+
+.container-form a i {
+    color: orange; 
+    margin-right: 10px;
+}
+
+.container-form form .campo,
+.container-form form textarea {
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 16px;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    outline: 0; /*Elimina el contorno o el espacio predeterminado de los campos*/
+}
+
+.container-form form textarea {
+    max-width: 530px;
+    min-width: 530px;
+    min-height: 140px;
+    max-height: 150px;
+}
+
+.container-form .btn-enviar {
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    outline: 0;
+    background: orange;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer; /*Cambia el cursor al pasar el mouse para indicar la clicabilidad*/
+    transition: all 900ms ease-in-out;
+}
+
+.container-form .btn-enviar:hover {
+    background: #e39510; /*Cambia el color de fondo al pasar el mouse*/
+}
+
+

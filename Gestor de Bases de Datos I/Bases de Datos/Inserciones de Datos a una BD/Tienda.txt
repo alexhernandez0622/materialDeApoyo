@@ -1,0 +1,80 @@
+-- Crear la tabla productos
+CREATE TABLE productos (
+    id_producto INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100),
+    precio DECIMAL(10, 2),
+    cantidad_disponible INT
+);
+
+-- Crear la tabla clientes
+CREATE TABLE clientes (
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    apellido VARCHAR(50),
+    direccion VARCHAR(100),
+    telefono VARCHAR(15)
+);
+
+-- Crear la tabla ventas
+CREATE TABLE ventas (
+    id_venta INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    id_producto INT,
+    cantidad_vendida INT,
+    fecha_venta DATE,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente) ON DELETE CASCADE,
+    FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
+);
+
+-- Insertar datos de ejemplo en la tabla productos
+INSERT INTO productos (nombre, precio, cantidad_disponible)
+VALUES ('Camiseta', 20.00, 100),
+       ('Pantalón', 30.00, 80),
+       ('Zapatos', 50.00, 50);
+
+-- Insertar datos de ejemplo en la tabla clientes
+INSERT INTO clientes (nombre, apellido, direccion, telefono)
+VALUES ('Juan', 'Pérez', 'Calle 123', '123-456-7890'),
+       ('María', 'Gómez', 'Avenida 456', '987-654-3210');
+
+-- Insertar datos de ejemplo en la tabla ventas
+INSERT INTO ventas (id_cliente, id_producto, cantidad_vendida, fecha_venta)
+VALUES (1, 1, 2, '2024-01-15'),
+       (2, 2, 1, '2024-02-01');
+
+
+UPDATE sencillo 1:
+
+Cambiar el nombre del producto con id_producto igual a 2 a "Jean":
+UPDATE productos 
+SET nombre = 'Jean' 
+WHERE id_producto = 2;
+
+UPDATE sencillo 2:
+
+Actualizar la dirección del cliente con id_cliente igual a 1 a "Calle 456":
+UPDATE clientes 
+SET direccion = 'Calle 456' 
+WHERE id_cliente = 1;
+
+
+SELECT con filtro:
+
+Seleccionar solo los productos con un precio mayor a 40.00:
+SELECT * FROM productos 
+WHERE precio > 40.00;
+
+
+SELECT más sencillo:
+
+Seleccionar solo el nombre y el precio de todos los productos:
+SELECT nombre, precio FROM productos;
+
+
+
+DELETE:
+
+Para eliminar un cliente con id_cliente igual a 2 y todas sus ventas relacionadas:
+
+DELETE FROM clientes 
+WHERE id_cliente = 2;

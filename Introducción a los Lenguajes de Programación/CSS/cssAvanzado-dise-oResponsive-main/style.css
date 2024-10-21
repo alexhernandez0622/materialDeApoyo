@@ -1,0 +1,104 @@
+/* Estilos generales para el cuerpo del documento */
+body {
+  font-family: 'Arial', sans-serif; /* Fuente principal del cuerpo del documento */
+  margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
+  padding: 0; /* Elimina el relleno predeterminado del cuerpo */
+  background-color: #f2f2f2; /* Color de fondo del cuerpo, puedes cambiarlo según tus preferencias */
+}
+
+/* Estilos para la sección de encabezado */
+header {
+  background-color: #333; /* Color de fondo del encabezado */
+  color: #fff; /* Color del texto en el encabezado */
+  padding: 10px; /* Relleno interno del encabezado */
+  text-align: center; /* Centra el texto dentro del encabezado */
+  width: auto; /* Ancho automático del encabezado */
+}
+
+/* Estilos para la barra de navegación */
+nav {
+  background-color: #555; /* Color de fondo de la barra de navegación */
+  padding: 10px; /* Relleno interno de la barra de navegación */
+}
+
+/* Estilos para los encabezados h2 */
+h2 {
+  margin: 0; /* Elimina los márgenes predeterminados de h2 */
+  color: #fff; /* Color del texto de h2 */
+  font-size: 16px; /* Tamaño de fuente de h2 */
+}
+
+/* Estilos para el contenedor principal del cuerpo del documento */
+.container-body {
+  width: auto; /* Ancho automático del contenedor */
+  justify-content: center; /* Centra los elementos en el eje principal */
+  align-items: center; /* Centra los elementos en el eje secundario */
+  margin-top: 5%; /* Margen superior del contenedor */
+}
+
+/* Estilos para el contenido del cuerpo del documento */
+.content-body {
+  display: flex; /* Usa un modelo de caja flexible para organizar el contenido */
+  height: 100vh; /* Altura del contenido al 100% del viewport */
+  flex-direction: column; /* Organiza los elementos en una columna */
+  align-items: center; /* Centra los elementos en el eje secundario */
+  margin-bottom: 20%; /* Margen inferior del contenido */
+}
+
+/* Estilos para la clase div-example */
+.div-example {
+  margin: 10px; /* Margen alrededor de div-example */
+  background-color: red; /* Color de fondo de div-example */
+  width: 200px; /* Ancho de div-example */
+  height: 30%; /* Altura de div-example */
+}
+
+/* Estilos para la sección de pie de página */
+footer {
+  background-color: #333; /* Color de fondo del pie de página */
+  color: #fff; /* Color del texto en el pie de página */
+  text-align: center; /* Centra el texto en el pie de página */
+  padding: 10px; /* Relleno interno del pie de página */
+  position: fixed; /* Fija el pie de página en la parte inferior de la ventana */
+  bottom: 0; /* Fija el pie de página en la parte inferior de la ventana */
+  width: 100%; /* Ancho del pie de página al 100% del viewport */
+}
+
+/* Media query para tablet (mínimo 768px de ancho) */
+@media (min-width: 768px) {
+  .container-body {
+    justify-content: space-around; /* Espaciado uniforme alrededor de los elementos en el eje principal */
+    margin-top: 5%; /* Margen superior del contenedor para tablet */
+  }
+
+  .content-body {
+    margin-bottom: 10%; /* Margen inferior del contenido para tablet */
+    flex-direction: row; /* Organiza los elementos en una fila para tablet */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en tablet */
+     /* Centra los elementos en el eje principal para tablet */
+    gap: 20px; /* Espacio entre elementos en tablet */
+  }
+
+  .div-example {
+    width: 40%; /* Ancho de div-example para tablet */
+    height: 30%; /* Altura de div-example para tablet */
+  }
+}
+
+/* Media query para desktop (mínimo 1023px de ancho) */
+@media (min-width: 1023px) {
+  .container-body {
+    height: auto; /* Altura automática del contenedor para desktop */
+  }
+
+  .div-example {
+    width: 35%; /* Ancho de div-example para desktop */
+    height: 40%; /* Altura de div-example para desktop */
+  }
+
+  .content-body {
+    justify-content: center; /* Centra los elementos en el eje principal para desktop */
+    margin-bottom: 10%; /* Margen inferior del contenido para desktop */
+    gap: 50px; /* Espacio entre elementos en desktop */
+  }
+}

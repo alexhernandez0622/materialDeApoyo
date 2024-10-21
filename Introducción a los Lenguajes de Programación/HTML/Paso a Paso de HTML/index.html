@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!--Inicia la sección del encabezado del documento. Esta sección contiene información sobre el documento, como metadatos, enlaces a hojas de estilo, scripts, etc.-->
+<head>
+    <!--Define la codificación de caracteres especiales del documento -->
+    <meta charset="UTF-8">
+    <!--Especifica cómo el navegador debe controlar las dimensiones y la escala de la página en dispositivos móviles. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--: Establece el título de la página, que se muestra en la pestaña del navegador.-->
+    <title>Ejemplo de HTML con Clase</title>
+</head>
+<!--
+    DOCTYPE html>: Define la versión de HTML que estás utilizando.
+<html>: Elemento raíz del documento.
+<head>: Contiene meta-información sobre el documento.
+<meta>: Proporciona metadatos, como el conjunto de caracteres y la configuración de la vista.
+<title>: Define el título de la página que se muestra en la pestaña del navegador.
+<style>: Permite incluir estilos CSS directamente en el documento.
+<body>: Contiene el contenido visible de la página.
+<header>, <nav>, <section>, <article>, <aside>, <footer>: Elementos semánticos para estructurar el contenido.
+<h1>, <h2>, <p>, <ul>, <li>, <a>: Etiquetas para encabezados, párrafos, listas y enlaces.
+class="miClase": Añade la clase "miClase" a ciertos elementos para aplicar estilos específicos a través de CSS.-->
+<body>
+    <header>
+        <h1 class="miClase">Mi Página Web</h1>
+    </header>
+
+    <div class="contenedorPrincipal">
+        <nav class="miClase">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <section class="miClase">
+            <article>
+                <h2>Artículo 1</h2>
+                <img src="img/Html1.jpg" width="50" height="50">
+                <p>Este es un artículo de ejemplo.</p>
+            </article>
+            
+            <article>
+                <h2>Artículo 2</h2>
+                <p>Otro artículo interesante.</p>
+            </article>
+        </section>
+
+        <aside class="miClase">
+            <h2>Barra lateral</h2>
+            <p>Contenido de la barra lateral.</p>
+        </aside>
+    </div>
+
+    <footer class="miClase">
+        <p>&copy; 2023 Mi Página Web</p>
+    </footer>
+</body>
+</html>

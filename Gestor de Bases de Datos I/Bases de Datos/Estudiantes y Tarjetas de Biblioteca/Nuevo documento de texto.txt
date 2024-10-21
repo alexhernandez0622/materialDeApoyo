@@ -1,0 +1,13 @@
+Supongamos que deseas rastrear la información de las tarjetas de biblioteca de los estudiantes en una escuela. Cada estudiante tiene una única tarjeta de biblioteca. Ejecuta los siguientes comandos:
+
+CREATE TABLE Estudiantes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50)
+);
+
+CREATE TABLE TarjetasBiblioteca (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    numero_tarjeta INT,
+    estudiante_id INT UNIQUE,
+    FOREIGN KEY (estudiante_id) REFERENCES Estudiantes(id)
+);

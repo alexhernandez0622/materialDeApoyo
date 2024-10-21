@@ -1,0 +1,38 @@
+Primero, diseñemos un diagrama de modelo ER simple para una base de datos hipotética. Supongamos que queremos crear una base de datos para almacenar información sobre libros y autores. Aquí está el diagrama ER básico:
+
+[Autor] ---(1:n)--- [Libro]
+
+
+En este diagrama, tenemos dos entidades: Autor y Libro. Un Autor puede tener varios Libros, pero un Libro solo puede tener un Autor. Ahora, apliquemos la primera forma normal (1FN) a este diseño.
+
+La primera forma normal (1FN) requiere que no haya grupos repetitivos de datos en una tabla. En el contexto de nuestro diseño, esto significa que no debe haber campos multivalorados en ninguna tabla.
+
+Podemos lograr esto dividiendo la tabla Autor y la tabla Libro en entidades separadas, donde cada tabla contendrá información única sobre autores y libros, respectivamente. Aquí está la estructura de la base de datos en MySQL después de aplicar la 1FN:
+
+-- Tabla para autores
+CREATE TABLE Autor (
+    autor_id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100),
+    apellido VARCHAR(100)
+);
+
+-- Tabla para libros
+CREATE TABLE Libro (
+    libro_id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(100),
+    autor_id INT,
+    FOREIGN KEY (autor_id) REFERENCES Autor(autor_id)
+);
+
+
+Ahora, hemos eliminado cualquier campo multivalorado de las tablas, cumpliendo así con la 1FN. Cada tabla tiene información única. Ahora, hemos eliminado cualquier campo multivalorado de las tablas, cumpliendo así con la 1FN. Cada tabla tiene información única y atómica en cada una de sus columnas. Atomica se refiere a que cada valor en cada columna representa un solo dato y no está compuesto por varios datos diferentes
+
+La segunda forma normal (2FN) se refiere a que una tabla está en 1FN y además, todos sus atributos no clave están completamente dependientes de la clave principal. En otras palabras, ningún atributo no clave debería depender parcialmente de la clave primaria.
+
+En el diseño que hemos creado anteriormente, parece que ya cumplimos con la 2FN, ya que cada tabla tiene una clave primaria y los atributos no clave están completamente determinados por la clave primaria correspondiente. Pero asegurémonos:
+
+La tabla Autor tiene una clave primaria (autor_id) y los atributos nombre y apellido dependen completamente de esta clave.
+La tabla Libro tiene una clave primaria (libro_id) y el atributo título depende completamente de esta clave. Además, la relación entre Libro y Autor está establecida mediante el campo autor_id, que es una clave foránea que referencia la clave primaria en la tabla Autor.
+
+
+Por lo tanto, nuestro diseño ya cumple con la segunda forma normal (2FN).

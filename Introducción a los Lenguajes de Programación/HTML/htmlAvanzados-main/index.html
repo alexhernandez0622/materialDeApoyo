@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" href="img/imagen.png" type="image/png">
+    <!--Icon-Font-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-form">
+        <div class="info-form">
+            <h2>Contáctanos</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui eligendi est voluptates quae ipsam eius, in quasi odio porro aut vel beatae aperiam.</p>
+            <a href="#"><i class="fa fa-phone"></i> 123-456-789</a>
+            <a href="#"><i class="fa fa-envelope"></i> email@tudominio.com</a>
+            <a href="#"><i class="fa fa-map-marked"></i> Ciudad, Pais</a>
+        </div>
+        <form action="#"  method="post" autocomplete="off">
+            <!-- Nombre: campo de texto requerido -->
+             <input type="text" name="nombre" placeholder="Tu Nombre" class="campo" required pattern="[A-Za-z\s]{1,40}" title="El nombre solo puede contener letras y espacios. Máximo 40 caracteres.">
+             
+             <!-- Email: campo de correo electrónico requerido -->
+              <input type="email" name="email" placeholder="Tu Email" class="campo" required title="Por favor, ingrese un correo electrónico válido.">
+              
+              <!-- Teléfono: campo numérico requerido con un patrón de 10 dígitos -->
+               <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" placeholder="Ej. 1234567890" class="campo" required title="Debe contener 10 dígitos numéricos.">
+
+               <label for="asunto">Asunto:</label><br>
+               <select id="asunto" class="campo" name="asunto" required>
+                   <option value="">Seleccionar</option>
+                   <option value="Consulta">Consulta</option>
+                   <option value="Reclamo">Reclamo</option>
+                   <option value="Sugerencia">Sugerencia</option>
+               </select>
+
+               <!-- Mensaje: campo de texto requerido -->
+                <textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Tu Mensaje..." required title="Por favor, ingrese su mensaje."></textarea>
+                
+                <!-- Botón de envío -->
+                 <input type="submit" value="Enviar Mensaje" class="btn-enviar">
+        </form>
+    </div>
+</body>
+</html>

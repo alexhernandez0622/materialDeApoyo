@@ -1,0 +1,63 @@
+En MySQL, cuando defines una relación de clave externa (foreign key) en una tabla, puedes especificar cómo deseas que se comporten las acciones de actualización y eliminación en la tabla secundaria (tabla que referencia la clave externa) cuando se realizan cambios en la tabla principal (tabla que contiene la clave primaria).
+
+Las opciones más comunes son:
+
+CASCADE: Esto significa que cuando una fila principal se elimina, también se eliminan automáticamente las filas secundarias que dependen de ella.
+
+CREATE TABLE ventas (
+    id_venta INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    id_producto INT,
+    cantidad_vendida INT,
+    fecha_venta DATE,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente) ON DELETE CASCADE,
+    FOREIGN KEY (id_producto) REFERENCES productos(id_producto) ON DELETE CASCADE
+);
+
+
+SET NULL: Cuando una fila principal se elimina, se establece el valor de la columna secundaria en NULL.
+
+CREATE TABLE ventas (
+    id_venta INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    id_producto INT,
+    cantidad_vendida INT,
+    fecha_venta DATE,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente) ON DELETE SET NULL,
+    FOREIGN KEY (id_producto) REFERENCES productos(id_producto) ON DELETE SET NULL
+);
+
+
+NO ACTION: Esto significa que no se realizará ninguna acción cuando se elimine o actualice la fila principal. Es la opción predeterminada si no se especifica ninguna acción.
+
+CREATE TABLE ventas (
+    id_venta INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    id_producto INT,
+    cantidad_vendida INT,
+    fecha_venta DATE,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente) ON DELETE NO ACTION,
+    FOREIGN KEY (id_producto) REFERENCES productos(id_producto) ON DELETE NO ACTION
+);
+
+
+RESTRICT: Esto restringe las operaciones de eliminación o actualización en la fila principal si hay filas secundarias relacionadas.
+
+CREATE TABLE ventas (
+    id_venta INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    id_producto INT,
+    cantidad_vendida INT,
+    fecha_venta DATE,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente) ON DELETE RESTRICT,
+    FOREIGN KEY (id_producto) REFERENCES productos(id_producto) ON DELETE RESTRICT
+);
+
+
+La sintaxis para definir una clave externa con las acciones ON DELETE y ON UPDATE se ve así:
+
+FOREIGN KEY (columna_fk) REFERENCES tabla_referenciada (columna_referenciada)
+ON DELETE acción
+ON UPDATE acción
+
+

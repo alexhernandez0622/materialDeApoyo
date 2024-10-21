@@ -1,0 +1,162 @@
+<!--Esto hace referencia a que estamos realizando un documento web (HTML)-->
+<!DOCTYPE html>
+<!--Especificamos el lenguaje-->
+<html lang="en">
+    <!--Metadatos que nos ayuda a ingresar archivos externos (CSS, JS, PHP, Bootstrap)-->
+<head>
+    <!--Nos permite ingresar caracteres especiales-->
+    <meta charset="UTF-8">
+    <!--Nos permite que se adapte a diferentes pantallas-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Nos permite establecer el titulo de nuestra página en el navegador-->
+    <title>Mi Primera Página Web</title>
+   <!--Nos ayuda a ingresar un archivo JS en nuestro archivo.HTML-->
+   <script src="nombreCarpeta/nombreArchivo"></script>
+</head>
+<!--Hace referencia al cuerpo del contenido web que se visualizará-->
+<body>
+    <!--Etiqueta que me permita ingresar hipervínculos-->
+    <a href="https://www.youtube.com/watch?v=HyelA8cVFMM&list=RDHyelA8cVFMM&start_radio=1" target="_blank">Ingresa a mi video</a>
+<br>
+<br>
+    <!--Esta etiqueta nos permite ingresar una imagen-->
+    <img src="img/Html1.jpg" width="150" height="150"/>
+    
+    <br>
+    <br>
+
+    <!--Esta etiqueta nos permite ingresar tablas-->
+    <table border="1">
+        <!--Inicializar las filas-->
+        <tr>
+            <!--Inicializar las celdas-->
+            <td> Ejemplo 1</td>
+            <td> Ejemplo 2</td>
+            <td> Ejemplo 3</td>
+        </tr>
+        <tr>
+            <td>Ejemplo 4</td>
+            <td>Ejemplo 5</td>
+            <td>Ejemplo 6</td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+    
+    <!--Esta etiqueta <p> nos permite ingresar parrafos-->
+        <!--Esta etiqueta <b> nos ayuda a resaltar colocando negrilla al parrafo-->
+    <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis amet delectus molestiae iusto fugiat. Rem velit obcaecati aliquam sequi at dolore atque laborum, qui et, sapiente quod sunt, consectetur commodi.</b></p>
+
+    <br>
+    <br>
+
+    <!--Esta etiqueta nos ayuda a insertar un contenedor con varías informaciones-->
+    <section>
+        <form action="/submit" method="post"> <!-- Formulario con método POST y acción "/submit" -->
+        
+            <!-- Sección de Información Personal -->
+            <fieldset>
+                <legend>Información Personal</legend> <!-- Título de la sección -->
+                
+                <label for="nombre">Nombre:</label> <!-- Etiqueta para el campo de nombre -->
+                <input type="text" id="nombre" name="nombre" required> <!-- Campo de entrada para el nombre, requerido -->
+                <br><br>
+    
+                <label for="apellido">Apellido:</label> <!-- Etiqueta para el campo de apellido -->
+                <input type="text" id="apellido" name="apellido" required> <!-- Campo de entrada para el apellido, requerido -->
+                <br><br>
+    
+                <label for="email">Correo Electrónico:</label> <!-- Etiqueta para el campo de email -->
+                <input type="email" id="email" name="email" required> <!-- Campo de entrada para el email, requerido -->
+                <br><br>
+    
+                <label for="telefono">Teléfono:</label> <!-- Etiqueta para el campo de teléfono -->
+                <input type="tel" id="telefono" name="telefono" required> <!-- Campo de entrada para el teléfono, requerido -->
+                <br><br>
+            </fieldset>
+    
+            <!-- Sección de Dirección -->
+            <fieldset>
+                <legend>Dirección</legend> <!-- Título de la sección -->
+                
+                <label for="direccion">Dirección:</label> <!-- Etiqueta para el campo de dirección -->
+                <input type="text" id="direccion" name="direccion" required> <!-- Campo de entrada para la dirección, requerido -->
+                <br><br>
+    
+                <label for="ciudad">Ciudad:</label> <!-- Etiqueta para el campo de ciudad -->
+                <input type="text" id="ciudad" name="ciudad" required> <!-- Campo de entrada para la ciudad, requerido -->
+                <br><br>
+    
+                <label for="estado">Estado/Provincia:</label> <!-- Etiqueta para el campo de estado/provincia -->
+                <input type="text" id="estado" name="estado" required> <!-- Campo de entrada para el estado/provincia, requerido -->
+                <br><br>
+    
+                <label for="codigo_postal">Código Postal:</label> <!-- Etiqueta para el campo de código postal -->
+                <input type="text" id="codigo_postal" name="codigo_postal" required> <!-- Campo de entrada para el código postal, requerido -->
+                <br><br>
+    
+                <label for="pais">País:</label> <!-- Etiqueta para el campo de país -->
+                <select id="pais" name="pais" required> <!-- Desplegable para seleccionar el país, requerido -->
+                    <option value="argentina">Argentina</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="chile">Chile</option>
+                    <option value="mexico">México</option>
+                    <option value="peru">Perú</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <br><br>
+            </fieldset>
+    
+            <!-- Sección de Preferencias -->
+            <fieldset>
+                <legend>Preferencias</legend> <!-- Título de la sección -->
+    
+                <label for="newsletter">¿Desea recibir nuestro newsletter?</label> <!-- Etiqueta para el checkbox de newsletter -->
+                <input type="checkbox" id="newsletter" name="newsletter"> <!-- Checkbox para suscribirse al newsletter -->
+                <br><br>
+    
+                <label>Género:</label> <!-- Etiqueta para los botones de radio de género -->
+                <br>
+                <input type="radio" id="masculino" name="genero" value="masculino" required> <!-- Botón de radio para seleccionar masculino, requerido -->
+                <label for="masculino">Masculino</label> <!-- Etiqueta para el botón de radio masculino -->
+                <br>
+                <input type="radio" id="femenino" name="genero" value="femenino"> <!-- Botón de radio para seleccionar femenino -->
+                <label for="femenino">Femenino</label> <!-- Etiqueta para el botón de radio femenino -->
+                <br>
+                <input type="radio" id="otro" name="genero" value="otro"> <!-- Botón de radio para seleccionar otro -->
+                <label for="otro">Otro</label> <!-- Etiqueta para el botón de radio otro -->
+                <br><br>
+    
+                <label for="comentarios">Comentarios:</label> <!-- Etiqueta para el campo de comentarios -->
+                <br>
+                <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea> <!-- Área de texto para comentarios -->
+                <br><br>
+            </fieldset>
+    
+            <input type="submit" value="Enviar"> <!-- Botón de enviar el formulario -->
+            <input type="reset" value="Restablecer"> <!-- Botón para restablecer el formulario -->
+        </form>
+    </section>
+    <form
+  action="https://formspree.io/f/mqkrwrjn"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
+   <!--Esta etiqueta nos permite ingresar el pie de página de nuestra página-->
+
+   <footer>
+    <p>&copy; 2023 Ingeniero | Desarrollador Alex Hernández</p>
+   </footer>
+</body>
+</html>

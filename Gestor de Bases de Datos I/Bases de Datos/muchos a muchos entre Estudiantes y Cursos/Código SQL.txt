@@ -1,0 +1,19 @@
+En una base de datos de una escuela, puedes tener estudiantes que toman múltiples cursos, y cada curso puede tener varios estudiantes. Esto se puede hacer mediante una tabla intermedia llamada "Inscripciones":
+
+CREATE TABLE Estudiantes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50)
+);
+
+CREATE TABLE Cursos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_curso VARCHAR(100)
+);
+
+CREATE TABLE Inscripciones (
+    estudiante_id INT,
+    curso_id INT,
+    PRIMARY KEY (estudiante_id, curso_id),
+    FOREIGN KEY (estudiante_id) REFERENCES Estudiantes(id),
+    FOREIGN KEY (curso_id) REFERENCES Cursos(id)
+);

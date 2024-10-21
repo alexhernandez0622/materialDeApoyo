@@ -1,0 +1,23 @@
+En un escenario donde los clientes pueden tener múltiples direcciones, pero solo una dirección de envío principal, puedes utilizar una tabla de unión para gestionar esta relación:
+
+CREATE TABLE Clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50)
+);
+
+CREATE TABLE Direcciones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    calle VARCHAR(100),
+    ciudad VARCHAR(50),
+    estado VARCHAR(50),
+    codigo_postal VARCHAR(10)
+);
+
+CREATE TABLE ClienteDireccion (
+    cliente_id INT,
+    direccion_id INT,
+    principal BOOLEAN,
+    PRIMARY KEY (cliente_id, direccion_id),
+    FOREIGN KEY (cliente_id) REFERENCES Clientes(id),
+    FOREIGN KEY (direccion_id) REFERENCES Direcciones(id)
+);

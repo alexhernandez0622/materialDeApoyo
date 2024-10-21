@@ -1,0 +1,110 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 320px;
+    margin: 30px auto;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+form {
+    padding: 5px;
+}
+
+label {
+    font-weight: 400;
+    display: block;
+    margin: 5px 0 3px;
+    color: #444;
+    font-size: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 6px;
+    margin: 3px 0 8px;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    font-size: 11px;
+    transition: border-color 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #66afe9;
+    outline: none;
+    box-shadow: 0 0 2px rgba(102, 175, 233, 0.4);
+}
+
+select {
+    appearance: none;
+    background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-128.png') no-repeat right #fff;
+    background-size: 10px;
+    background-position: calc(100% - 5px);
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 8px;
+    margin-top: 4px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.15s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.checkbox input[type="checkbox"] {
+    margin-right: 4px;
+}
+
+.checkbox label {
+    color: #333;
+    font-weight: 400;
+    font-size: 12px;
+}

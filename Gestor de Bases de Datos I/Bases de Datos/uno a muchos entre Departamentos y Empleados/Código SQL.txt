@@ -1,0 +1,13 @@
+Imagina una base de datos de una empresa en la que varios empleados trabajan en un departamento. Cada empleado está asociado a un único departamento. Ejecuta estos comandos:
+
+CREATE TABLE Departamentos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50)
+);
+
+CREATE TABLE Empleados (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    departamento_id INT,
+    FOREIGN KEY (departamento_id) REFERENCES Departamentos(id)
+);

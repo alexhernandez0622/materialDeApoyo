@@ -1,0 +1,19 @@
+Proceso SumaDeNumerosPares
+	// Definición de variables
+	Definir N, suma, i Como Entero
+	
+	// Inicialización de variables
+	Escribir "Ingrese el valor de N:"
+	Leer N
+	suma <- 0
+	i <- 1
+	
+	// Bucle para sumar los primeros N números pares
+	Mientras i <= N Hacer
+		suma <- suma + (i * 2)  // Multiplicamos por 2 para obtener el número par
+		i <- i + 1
+	FinMientras
+	
+	// Mostrar el resultado
+	Escribir "La suma de los primeros ", N, " números pares es: ", suma
+FinProceso

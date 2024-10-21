@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #181818;
+    color: #fff;
+    line-height: 1.6;
+    font-family: 'Quicksand', sans-serif;
+    padding: 0 24px;
+}
+
+.container {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.logo {
+    text-align: center;
+    font-size: 48px;
+}
+
+.logo span {
+    color: #B70E21;
+}
+
+.contact-wrapper {
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+}
+
+/* Este estilo se aplica a todos los elementos secundarios directos de .contact-wrapper
+
+> es el selector de hijo directo en CSS. Significa que los estilos se aplicarán solo a los elementos secundarios directos del elemento con la clase .contact-wrapper. Los elementos secundarios directos son aquellos que son hijos inmediatos del elemento con la clase .contact-wrapper, sin importar cuán profunda sea su jerarquía de anidación.
+
+* es un selector universal que coincide con cualquier tipo de elemento HTML.
+*/
+.contact-wrapper > * {
+    padding: 16px; /* Se establece un relleno de 16 píxeles en todos los lados */
+}
+.contact-form {
+    background: #222222;
+}
+
+.contact-form form {
+    display: grid;
+    /*Esta propiedad CSS se utiliza para definir un contenedor como un grid (rejilla) de elementos. En este caso, se está configurando el formulario para que utilice un sistema de rejilla para organizar sus elementos internos.*/
+    grid-template-columns: 1fr 1fr;
+    /*Esta propiedad CSS se utiliza para definir las columnas del grid en el formulario. En este caso, se están creando dos columnas de igual ancho. La unidad "fr" significa "fracción" y se utiliza para distribuir el espacio disponible de manera equitativa entre las columnas. En este caso, ambas columnas ocuparán la mitad del ancho disponible cada una.*/
+}
+
+.contact-form form label {
+    display: block;
+}
+
+.contact-form form p {
+    margin: 0;
+    padding: 16px;
+}
+
+
+.contact-form form button,
+.contact-form form input,
+.contact-form form textarea {
+    width: 100%;
+    padding: 11.2px;
+    border: none;
+    background: none;
+    outline: 0;
+    color: #fff;
+    border-bottom: 1px solid #d63031;
+}
+
+.contact-form form button {
+    background: #B70E21;
+    border: 0;
+    text-transform: uppercase;
+    padding: 16px;
+}
+
+.contact-form form button:hover,
+.contact-form form button:focus {
+    background: #d63031;
+    color: #fff;
+    transition: background-color 1s ease-out;
+    outline: 0;
+}
+
+/* CONTACT INFO */
+.contact-info {
+    background: #000;
+}
+
+.contact-info h4, .contact-info ul, .contact-info p {
+    text-align: center;
+    margin: 0 0 16px 0;
+}
+
+/* LARGE SIZE */
+@media(min-width: 700px) {
+    body {
+        padding: 0 64px;
+    }
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    .contact-wrapper > * {
+        padding: 32px;
+    }
+    .contact-info h4,
+    .contact-info ul,
+    .contact-info p {
+        text-align: left;
+    }
+}

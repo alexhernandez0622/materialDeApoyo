@@ -1,0 +1,83 @@
+/* Estilo para el cuerpo del documento */
+body {
+    font-family: 'Arial', sans-serif; /* Establece la fuente del texto como Arial o una fuente sans-serif si Arial no está disponible */
+    margin: 0; /* Elimina el margen exterior del cuerpo */
+    padding: 0; /* Elimina el relleno interior del cuerpo */
+}
+
+/* Estilo para el encabezado, la barra de navegación, las secciones y el pie de página */
+header, nav, section, footer {
+    text-align: center; /* Centra el texto dentro de estos elementos */
+    padding: 20px; /* Agrega un relleno de 20px alrededor de estos elementos */
+}
+
+/* Estilo específico para el encabezado */
+header {
+    background-color: #333; /* Establece el color de fondo del encabezado como #333 (gris oscuro) */
+    color: #fff; /* Establece el color del texto del encabezado como blanco */
+}
+
+/* Estilo específico para la barra de navegación */
+nav {
+    background-color: #555; /* Establece el color de fondo de la barra de navegación como #555 (gris más oscuro) */
+}
+
+/* Estilo para la lista no ordenada dentro de la barra de navegación */
+nav ul {
+    list-style: none; /* Elimina los marcadores de lista en la lista no ordenada */
+    padding: 0; /* Elimina el relleno interior de la lista no ordenada */
+}
+
+/* Estilo para los elementos de lista dentro de la barra de navegación */
+nav li {
+    display: inline; /* Hace que los elementos de lista se muestren en línea uno al lado del otro */
+    margin-right: 20px; /* Agrega un margen a la derecha de cada elemento de lista */
+}
+
+/* Estilo para los enlaces dentro de la barra de navegación */
+nav a {
+    text-decoration: none; /* Elimina la decoración de subrayado de los enlaces */
+    color: #fff; /* Establece el color del texto de los enlaces como blanco */
+    font-weight: bold; /* Hace que el texto de los enlaces sea negrita */
+}
+
+/* Estilo para las secciones del contenido */
+section {
+    display: flex; /* Utiliza un modelo de caja flexible para las secciones */
+    justify-content: space-around; /* Distribuye uniformemente los elementos hijos a lo largo del eje principal con espacio alrededor */
+    flex-wrap: wrap; /* Permite que los elementos hijos se envuelvan a la siguiente línea si no hay suficiente espacio */
+}
+
+/* Estilo para los artículos dentro de las secciones */
+article {
+    flex: 1; /* Hace que los artículos se expandan para llenar el espacio disponible */
+    margin: 20px; /* Agrega un margen alrededor de cada artículo */
+    text-align: center; /* Alinea el texto a la izquierda dentro de cada artículo */
+}
+
+img {
+    max-width: 100%; /*Hace que las imagenes ocupen todo el ancho de pantalla*/
+    height: auto; /*Se ajusta automáticamente a la altura del navegador*/
+    border-radius: 10px; /*Nos ayud a redondear los bordes de las imagenes*/
+}
+
+footer 
+{
+    background-color: #333; /*Nos ayuda a poner el fondo en el pie de página*/
+    color: white; /*Nos ayuda a poner el color del texto del pie de página*/
+}
+
+
+
+/*Para referenciar un id, se usa el #nombredelid
+#navegacion {
+    color: blue;
+}
+*/
+
+/*Para referenciar una clase, se usa .nombredelaclase
+.content{
+
+}
+*/
+

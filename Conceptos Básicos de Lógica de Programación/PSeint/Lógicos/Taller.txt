@@ -1,0 +1,12 @@
+
+Comparar tres números para encontrar el mayor:
+Crea un algoritmo que reciba tres números diferentes y determine cuál de ellos es el mayor.
+
+Comprobar si un número está fuera de un rango específico:
+Diseña un algoritmo que verifique si un número dado no se encuentra dentro del rango de 50 a 100, ambos inclusive.
+
+Validar si una persona es elegible para votar:
+Escribe un algoritmo que reciba la edad de una persona y determine si es elegible para votar. Una persona puede votar si tiene 18 años o más y menos de 70 años, o si tiene 16 o 17 años y una autorización especial.
+
+Verificar si un número es positivo y menor de 100 o si es múltiplo de 7:
+Escribe un algoritmo que determine si un número es positivo y menor de 100, o si es un múltiplo de 7.

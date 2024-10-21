@@ -1,0 +1,49 @@
+-- Esta línea de código SQL crea una tabla llamada Cliente.
+CREATE TABLE Cliente (
+    -- Esta línea define una columna llamada PK_ID_Cliente que es de tipo INT y se establece como clave primaria.
+    PK_ID_Cliente INT PRIMARY KEY "AAUTO_INCREMENT,
+    -- Esta línea define una columna llamada Nombre que es de tipo VARCHAR(50) y no puede ser nula.
+    Nombre VARCHAR(50) NOT NULL,
+    -- Esta línea define una columna llamada Apellido que es de tipo VARCHAR(50) y no puede ser nula.
+    Apellido VARCHAR(50) NOT NULL,
+    -- Esta línea define una columna llamada Direccion que es de tipo VARCHAR(100) y no puede ser nula.
+    Direccion VARCHAR(100) NOT NULL,
+    -- Esta línea define una columna llamada Telefono que es de tipo VARCHAR(20) y no puede ser nula.
+    Telefono VARCHAR(20) NOT NULL,
+    -- Esta línea define una columna llamada Correo que es de tipo VARCHAR(50) y no puede ser nula.
+    Correo VARCHAR(50) NOT NULL,
+    -- Esta línea establece una restricción UNIQUE en la columna Correo para garantizar que cada dirección de correo electrónico sea única en la tabla.
+    UNIQUE (Correo)
+);
+
+-- Esta línea de código SQL crea una tabla llamada Cuenta.
+CREATE TABLE Cuenta (
+    -- Esta línea define una columna llamada PK_ID_Cuenta que es de tipo INT y se establece como clave primaria.
+    PK_ID_Cuenta INT PRIMARY KEY,
+    -- Esta línea define una columna llamada Tipo_Cuenta que es de tipo ENUM con dos posibles valores: 'AHORRO' o 'CORRIENTE'. Esta columna no puede ser nula.
+    Tipo_Cuenta ENUM('AHORRO', 'CORRIENTE') NOT NULL,
+    -- Esta línea define una columna llamada Saldo que es de tipo DECIMAL(10,2) y no puede ser nula.
+    Saldo DECIMAL(10,2) NOT NULL,
+    -- Esta línea define una columna llamada Fecha_Apertura que es de tipo DATE y no puede ser nula.
+    Fecha_Apertura DATE NOT NULL,
+    -- Esta línea define una columna llamada PK_ID_Cliente que es de tipo INT y se utilizará como clave externa para referenciar la tabla Cliente.
+    PK_ID_Cliente INT,
+    -- Esta línea establece una restricción FOREIGN KEY en la columna PK_ID_Cliente que referencia la columna PK_ID_Cliente en la tabla Cliente.
+    FOREIGN KEY (PK_ID_Cliente) REFERENCES Cliente(PK_ID_Cliente)
+);
+
+-- Esta línea de código SQL crea una tabla llamada Transaccion.
+CREATE TABLE Transaccion (
+    -- Esta línea define una columna llamada PK_ID_Transaccion que es de tipo INT y se establece como clave primaria.
+    PK_ID_Transaccion INT PRIMARY KEY,
+    -- Esta línea define una columna llamada FK_ID_Cuenta que es de tipo INT y se utilizará como clave externa para referenciar la tabla Cuenta.
+    FK_ID_Cuenta INT,
+    -- Esta línea define una columna llamada Tipo_Transaccion que es de tipo ENUM con tres posibles valores: 'DEPOSITO', 'RETIRO' o 'TRANSFERENCIA'. Esta columna no puede ser nula.
+    Tipo_Transaccion ENUM('DEPOSITO', 'RETIRO', 'TRANSFERENCIA') NOT NULL,
+    -- Esta línea define una columna llamada Monto que es de tipo DECIMAL(10,2) y no puede ser nula.
+    Monto DECIMAL(10,2) NOT NULL,
+    -- Esta línea define una columna llamada Fecha que es de tipo DATE y no puede ser nula.
+    Fecha DATE NOT NULL,
+    -- Esta línea establece una restricción FOREIGN KEY en la columna FK_ID_Cuenta que referencia la columna PK_ID_Cuenta en la tabla Cuenta.
+    FOREIGN KEY (FK_ID_Cuenta) REFERENCES Cuenta(PK_ID_Cuenta)
+);

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario de Contacto</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <h1>Contacto</h1>
+  <form action="#" method="post">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+    
+    <label for="email">Correo electrónico:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    
+    <label for="telefono">Teléfono:</label><br>
+    <!-- id="mensaje": Este atributo asigna un identificador único al área de texto, lo que permite a los desarrolladores acceder a él fácilmente mediante JavaScript o CSS.
+        
+        pattern="[0-9]{10}indica que el valor debe contener exactamente 10 dígitos numéricos del 0 al 9.-->
+    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" placeholder="Ej. 1234567890"><br><br>
+    
+    <label for="asunto">Asunto:</label><br>
+    <select id="asunto" name="asunto" required>
+      <option value="">Seleccionar</option>
+      <option value="Consulta">Consulta</option>
+      <option value="Reclamo">Reclamo</option>
+      <option value="Sugerencia">Sugerencia</option>
+    </select><br><br>
+    
+    <label for="mensaje">Mensaje:</label><br>
+    <!--textarea: Esta etiqueta define un área de texto en el formulario, donde los usuarios pueden escribir texto libremente.
+
+id="mensaje": Este atributo asigna un identificador único al área de texto, lo que permite a los desarrolladores acceder a él fácilmente mediante JavaScript o CSS.
+
+name="mensaje": Define el nombre del área de texto que se utilizará para enviar los datos del formulario al servidor cuando se envíe el formulario. En este caso, "mensaje" será el nombre del parámetro enviado.
+
+rows="4": Especifica la altura inicial del área de texto en términos de filas de texto. En este caso, el área de texto inicialmente mostrará espacio para cuatro líneas de texto.
+
+cols="50": Especifica el ancho inicial del área de texto en términos de caracteres. En este caso, el área de texto inicialmente mostrará espacio para 50 caracteres por línea.-->
+    <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
+    
+    <input type="checkbox" id="suscripcion" name="suscripcion" value="suscribirse">
+    <label for="suscripcion">Suscribirse a nuestro boletín</label><br><br>
+    
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

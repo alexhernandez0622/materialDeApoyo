@@ -1,0 +1,13 @@
+En una aplicación web, puedes tener usuarios con perfiles de usuario. Cada usuario tiene un perfil de usuario único. Ejecuta los siguientes comandos:
+
+CREATE TABLE Usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_usuario VARCHAR(50)
+);
+
+CREATE TABLE PerfilesUsuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT UNIQUE,
+    nombre_completo VARCHAR(100),
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id)
+);

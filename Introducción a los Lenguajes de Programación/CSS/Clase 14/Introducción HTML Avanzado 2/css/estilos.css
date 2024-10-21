@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.banner {
+    width: 100%;
+    height: 600px;
+    /*Aplica la animación "banner" con duración de 10 seguros, en línea, que sea infinita y que alterne las imagenes*/
+    animation: banner  10s infinite linear alternate;
+    /*Establece el tamaño de fondo al 100% de ancho y 100% de alto*/
+    background-size: 100% 100%;
+    position: relative;
+    display: flex;
+    /*Centra los elementos horizontalmente dentro del contenedor*/
+    justify-content: center;
+    /*Centra los elementos verticalmente dentro del contenedor*/
+    align-items: center;
+}
+
+@keyframes banner {
+    0%, 20% {
+        background-image: url("https://fondosmil.com/fondo/12406.jpg");
+    }
+    25%, 45% {
+        background-image: url("https://i.pinimg.com/originals/b9/1d/fd/b91dfdd21cf816a69ed544d6800680a4.jpg");
+    }
+    50%, 70% {
+        background-image: url("https://i.pinimg.com/originals/55/5e/52/555e52ca50443a4d366858dc5c83d540.jpg");
+    }
+    75%, 100% {
+        background-image: url("https://img.freepik.com/foto-gratis/pintura-lago-montana-montana-al-fondo_188544-9126.jpg?w=740&t=st=1693836766~exp=1693837366~hmac=b1dee7b30e4ad282baf5b80fd8a2c156a87edfaccb1bdd76440b625754baaf16");
+    }
+}
+
+.capa {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.info {
+    /*Establece el sobreposicionamiento de los elementos*/
+    z-index: 1;
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+}
+
+.info h1 {
+    color: #fff;
+    font-size: 45px;
+    margin-bottom: 20px;
+    /*Establece el espaciado entre letras*/
+    letter-spacing: 1px;
+}
+
+ .info p {
+    color: #c7c7c7;
+    /*Establece la altura de la línea del interlineado
+    del texto*/
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.info a {
+    color: #fff;
+    text-decoration: none;
+    background: #3088e0;
+    padding: 16px 37px;
+    /*Establece la visualización cómo bloque en línea*/
+    display: inline-block;
+    border-radius: 50px;
+}
+
+
+
+
+

@@ -1,0 +1,89 @@
+/* Define un conjunto de reglas CSS para aplicar a todos los elementos (*) en el documento */
+
+* {
+	margin: 0; /* Establece los márgenes exteriores de los elementos en 0 */
+	padding: 0; /* Establece el relleno interior de los elementos en 0 */
+	box-sizing: border-box; /* Define el modelo de caja para incluir el padding y border en el tamaño total */
+	font-family: sans-serif; /* Establece la familia de fuentes predeterminada a sans-serif */
+  }
+  
+  /* Define un conjunto de reglas para elementos con la clase "banner" */
+  
+  .banner {
+	width: 100%; /* Establece el ancho del elemento al 100% del contenedor */
+	height: 600px; /* Establece la altura del elemento en 600px */
+	animation: banner 10s infinite linear alternate; /* Aplica la animación "banner" con duración de 10 segundos, infinita y con dirección alterna */
+	background-size: 100% 100%; /* Establece el tamaño de fondo al 100% de ancho y 100% de alto */
+	position: relative; /* Establece la posición relativa para posicionamiento de elementos secundarios */
+	display: flex; /* Establece la visualización como flex para manejar el posicionamiento de elementos internos */
+	justify-content: center; /* Centra los elementos horizontalmente dentro del contenedor flex */
+	align-items: center; /* Centra los elementos verticalmente dentro del contenedor flex */
+  }
+  
+  /* Define una animación llamada "banner" con múltiples pasos de tiempo */
+  
+  @keyframes banner {
+	0%, 20% {
+	  background-image: url("https://fondosmil.com/fondo/12406.jpg"); /*
+	   Cambia la imagen de fondo en los pasos de tiempo 0% y 20% */
+	}
+	25%, 45% {
+	  background-image: url("https://img.freepik.com/foto-gratis/pintura-lago-montana-montana-al-fondo_188544-9126.jpg?w=740&t=st=1693836766~exp=1693837366~hmac=b1dee7b30e4ad282baf5b80fd8a2c156a87edfaccb1bdd76440b625754baaf16"); /*
+	   Cambia la imagen de fondo en los pasos de tiempo 25% y 45% */
+	}
+	50%, 70% {
+	  background-image: url("https://i.pinimg.com/originals/b9/1d/fd/b91dfdd21cf816a69ed544d6800680a4.jpg"); /* Cambia la imagen de fondo en los pasos de tiempo 50% y 70% */
+	}
+	75%, 100% {
+	  background-image: url("https://i.pinimg.com/originals/55/5e/52/555e52ca50443a4d366858dc5c83d540.jpg"); /* Cambia la imagen de fondo en los pasos de tiempo 75% y 100% */
+	}
+  }
+  
+  /* Define un conjunto de reglas para elementos con la clase "capa" */
+  
+  .capa {
+	width: 100%; /* Establece el ancho del elemento al 100% del contenedor */
+	height: 100%; /* Establece la altura del elemento al 100% del contenedor */
+	position: absolute; /* Establece la posición absoluta para posicionamiento en relación con el contenedor padre */
+	top: 0; /* Establece la posición superior en 0 con respecto al contenedor padre */
+	left: 0; /* Establece la posición izquierda en 0 con respecto al contenedor padre */
+	background: rgba(0, 0, 0, 0.6); /* Establece un color de fondo semitransparente */
+  }
+  
+  /* Define un conjunto de reglas para elementos con la clase "info" */
+  
+  .info {
+	z-index: 1; /* Establece el índice z para controlar el apilamiento de elementos */
+	width: 100%; /* Establece el ancho del elemento al 100% del contenedor */
+	max-width: 550px; /* Establece el ancho máximo del elemento en 550px */
+	text-align: center; /* Establece el alineamiento de texto al centro */
+  }
+  
+  /* Define un conjunto de reglas para elementos h1 dentro de la clase "info" */
+  
+  .info h1 {
+	color: #fff; /* Establece el color del texto en blanco */
+	font-size: 45px; /* Establece el tamaño de fuente en 45px */
+	margin-bottom: 20px; /* Establece un margen inferior de 20px */
+	letter-spacing: 1px; /* Establece el espaciado entre letras en 1px */
+  }
+  
+  /* Define un conjunto de reglas para elementos p dentro de la clase "info" */
+  
+  .info p {
+	color: #c7c7c7; /* Establece el color del texto en gris claro */
+	line-height: 1.7; /* Establece la altura de línea en 1.7 */
+	margin-bottom: 30px; /* Establece un margen inferior de 30px */
+  }
+  
+  /* Define un conjunto de reglas para elementos a dentro de la clase "info" */
+  
+  .info a {
+	color: #fff; /* Establece el color del texto en blanco */
+	text-decoration: none; /* Elimina la decoración de enlace subrayado */
+	background: #3088e0; /* Establece un color de fondo para el enlace */
+	padding: 16px 37px; /* Establece el relleno interno del enlace */
+	display: inline-block; /* Establece la visualización como bloque en línea */
+	border-radius: 50px; /* Establece el radio de borde para lograr una forma circular */
+  }
+  

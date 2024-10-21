@@ -1,0 +1,56 @@
+ Crear un modelo entidad-relación para un sistema de biblioteca, donde se registran libros con sus respectivos autores, así como los préstamos realizados por usuarios:
+
+  +---------------------+          +------------------------+
+  |        Libro        |          |         Autor          |
+  +---------------------+          +------------------------+
+  | PK: id_libro       |1      N | PK: id_autor           |
+  |     titulo          |----------|     nombre             |
+  | FK: id_autor -------|          |     apellido           |
+  +---------------------+          +------------------------+
+           |
+           | 1     N
+           |
+  +------------------------+
+  |        Préstamo        |
+  +------------------------+
+  | PK: id_préstamo       |
+  | FK: id_libro          |
+  | FK: id_usuario        |
+  | fecha_préstamo        |
+  | fecha_devolución      |
+  +------------------------+
+           |
+           | 1     N
+           |
+  +------------------------+
+  |        Usuario         |
+  +------------------------+
+  | PK: id_usuario        |
+  |     nombre             |
+  |     apellido           |
+  |     dirección          |
+  +------------------------+
+
+
+
+Libro - Autor:
+
+Un libro puede tener uno o varios autores.
+Un autor puede estar asociado con uno o varios libros.
+Préstamo - Libro:
+
+Un préstamo está asociado con un libro específico.
+Un libro puede estar asociado con uno o varios préstamos.
+Préstamo - Usuario:
+
+Un préstamo está asociado con un usuario específico.
+Un usuario puede tener uno o varios préstamos.
+
+1FN:
+Cada atributo en una tabla del modelo de datos contiene un solo valor simple en cada celda.
+
+2FN:
+La tabla "Libro" está en 2FN porque todos los atributos no clave ("titulo") dependen completamente de la clave primaria ("id_libro").
+La tabla "Autor" también está en 2FN porque todos los atributos no clave ("nombre", "apellido") dependen completamente de la clave primaria ("id_autor").
+La tabla "Usuario" también está en 2FN porque todos los atributos no clave ("nombre", "apellido", "dirección") dependen completamente de la clave primaria ("id_usuario").
+La tabla "Préstamo" parece estar en 2FN ya que no muestra dependencias parciales en sus atributos respecto a su clave primaria compuesta.

@@ -1,0 +1,39 @@
+-- Crear la tabla clientes
+CREATE TABLE clientes (
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    apellido VARCHAR(50),
+    direccion VARCHAR(100),
+    telefono VARCHAR(15),
+    cantidad_prestamo DECIMAL(10, 2),
+    tasa_interes DECIMAL(5, 2),
+    fecha_prestamo DATE
+);
+
+El primer número (10) representa la precisión total, es decir, el número total de dígitos que pueden ser almacenados, tanto antes como después del punto decimal.
+El segundo número (2) representa la escala, es decir, el número de dígitos que se permiten después del punto decimal.
+Por ejemplo, un valor válido para este campo podría ser 12345.67.
+
+-- Insertar datos en la tabla clientes
+INSERT INTO clientes (nombre, apellido, direccion, telefono, cantidad_prestamo, tasa_interes, fecha_prestamo)
+VALUES ('Juan', 'Pérez', 'Calle 123', '123-456-7890', 5000.00, 0.05, '2024-01-15'),
+       ('María', 'Gómez', 'Avenida 456', '987-654-3210', 8000.00, 0.07, '2024-02-01');
+
+-- Consultar todos los clientes
+SELECT * FROM clientes;
+
+-- Consultar un cliente por su id_cliente
+SELECT * FROM clientes WHERE id_cliente = 1;
+
+-- Consultar un cliente por su dirección y apellido
+SELECT * FROM clientes WHERE direccion LIKE '%Calle 123' AND apellido = 'Perez'
+
+--Consultar un cliente por su dirección
+SELECT * FROM clientes WHERE direccion LIKE '%123 Calle Principal%';
+El símbolo "%" en el patrón de búsqueda indica que puede haber cualquier número de caracteres antes o después de la cadena de texto que estás buscando
+
+-- Actualizar la cantidad_prestamo de un cliente
+UPDATE clientes SET cantidad_prestamo = 6000.00 WHERE id_cliente = 1;
+
+-- Eliminar un cliente por su id_cliente
+DELETE FROM clientes WHERE id_cliente = 2;

@@ -1,0 +1,15 @@
+Ejercicio 1: Tienda en Línea
+
+Crea una base de datos para una tienda en línea que contemple las entidades Producto, Cliente y Pedido. Crea las relaciones para rastrear los productos incluidos en cada pedido.
+
+Ejercicio 2: Red Social
+
+Diseña una base de datos para una red social que incluya entidades como Usuario, Publicación y Amigo. Crea las relaciones de amistad entre usuarios.
+
+Ejercicio 3: Sistema de Reservas de Hoteles
+
+Crea una base de datos para un sistema de reservas de hoteles. Define entidades para Hotel, Habitación y Cliente, y utiliza las relaciones para registrar las reservas de habitaciones por parte de los clientes.
+
+Ejercicio 4: Clínica Médica
+
+Diseña una base de datos para una clínica médica que incluya entidades como Paciente, Médico y Cita. Utiliza las relaciones llevar un registro de las citas programadas entre pacientes y médicos.
